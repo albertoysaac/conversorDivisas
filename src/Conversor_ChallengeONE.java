@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 import javax.swing.JOptionPane;
 
 public class Conversor_ChallengeONE {
@@ -5,7 +7,6 @@ public class Conversor_ChallengeONE {
     public static void main(String[] args) {
         
         String[] opciones = {"Conversor de Divisas", "Conversor de Temperatura"};
- 
         boolean continuar = true;
         
         //Ciclo do-while, para regresar al menu principal al finalizar la conversion
@@ -48,8 +49,6 @@ public class Conversor_ChallengeONE {
         } while (continuar);
     }
 
-   
-
     public static void convertirDivisas() {
         double cantidadDivisaOrigen = 0;
         boolean esNumeroValido = false;
@@ -67,6 +66,7 @@ public class Conversor_ChallengeONE {
         } while (!esNumeroValido);
 
         // Tipos de cambio actualizados (al 18 de julio de 2023)
+
         double tipoCambioDolar = 16.75; // 1 USD = 16.75 MXN
         double tipoCambioEuro = 18.82; // 1 EUR = 18.82 MXN
         double tipoCambioLibraEsterlina = 21.82; // 1 GBP = 21.82 MXN
@@ -77,7 +77,7 @@ public class Conversor_ChallengeONE {
             "De Peso (MXN) a Otras Divisas",
             "De Otras Divisas a Peso (MXN)"
         };
-        
+
         String[] opcionesDivisas = {
             "Dólares (USD)", 
             "Euros (EUR)", 
@@ -196,14 +196,60 @@ public class Conversor_ChallengeONE {
         }
     }
 
-public static void convertirTemperatura() {
-    double temperaturaCelsius = Double.parseDouble(JOptionPane.showInputDialog("Ingrese la temperatura en grados Celsius:"));
+    public static void convertirTemperatura() {
+    String[] opcionesMedida = { "Celsius", "Fahrenheit", "Kelvin" };
 
-    // Fórmula de conversión de grados Celsius a Fahrenheit
-    double temperaturaFahrenheit = (temperaturaCelsius * 9/5) + 32;
+    // Mostrar menú de opciones para seleccionar la medida origen
+    String medidaOrigen = (String) JOptionPane.showInputDialog(
+            null,
+            "Seleccione la medida de temperatura origen:",
+            "Conversor de Temperatura",
+            JOptionPane.PLAIN_MESSAGE,
+            null,
+            opcionesMedida,
+            opcionesMedida[0]
+    );
 
-    JOptionPane.showMessageDialog(null, "Temperatura en Fahrenheit: " + temperaturaFahrenheit + " °F");
+    if (medidaOrigen != null) {
+        double temperaturaOrigen = Double.parseDouble(JOptionPane.showInputDialog("Ingrese la cantidad de temperatura en " + medidaOrigen + ":"));
+
+        // Copiar el array de opcionesMedida para las opciones de medida destino
+        String[] opcionesMedidaDestino = Arrays.stream(opcionesMedida)
+                .filter(medida -> !medida.equals(medidaOrigen))
+                .toArray(String[]::new);
+
+        String medidaDestino = (String) JOptionPane.showInputDialog(
+                null,
+                "Seleccione la medida de temperatura destino:",
+                "Conversor de Temperatura",
+                JOptionPane.PLAIN_MESSAGE,
+                null,
+                opcionesMedidaDestino,
+                opcionesMedidaDestino[0]
+        );
+
+        if (medidaDestino != null) {
+            double temperaturaConvertida = 0;
+
+            // Conversión de la medida origen a Celsius
+            if (medidaOrigen.equals("Fahrenheit")) {
+                temperaturaOrigen = (temperaturaOrigen - 32) * 5 / 9;
+            } else if (medidaOrigen.equals("Kelvin")) {
+                temperaturaOrigen = temperaturaOrigen - 273.15;
+            }
+
+            // Conversión de Celsius a la medida destino
+            if (medidaDestino.equals("Fahrenheit")) {
+                temperaturaConvertida = temperaturaOrigen * 9 / 5 + 32;
+            } else if (medidaDestino.equals("Kelvin")) {
+                temperaturaConvertida = temperaturaOrigen + 273.15;
+            } else {
+                temperaturaConvertida = temperaturaOrigen;
+            }
+
+            JOptionPane.showMessageDialog(null, "Temperatura en " + medidaDestino + ": " + temperaturaConvertida + " " + medidaDestino);
+        }
+    }
 }
-
 
 }
