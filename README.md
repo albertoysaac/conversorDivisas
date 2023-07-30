@@ -6,8 +6,10 @@
   los conversores reutilizando el mismo codigo.</p>
 
 <h3>Conversor de divisas</h3>
-<p>El conversor de divisas nos ofrece la posibilidad de convertir de una divisa a otra entre las cuales estan Peso Mexicano (MXN) dólares estadounidenses (USD), euros (EUR), libras esterlinas (GBP), yenes japoneses (JPY) y 
-  wons surcoreanos (KRW) </p>
+<p>El conversor de divisas nos ofrece la posibilidad de convertir de una divisa a otra entre las cuales estan Peso Mexicano (MXN) dólares estadounidenses (USD), euros (EUR), libras esterlinas (GBP), yenes japoneses (JPY) y wons surcoreanos (KRW) </p>
+
+![Imagen del conversor de divisas](img readme/divisas.png)
+
 
 <h3>Conversor de temperaturas</h3>
 <p>El conversor de temperaturas nos ofrece la posibilidad de convertir unidades de temperatura (Celsius, Fahrenheit y Kelvin) utilizando la fórmulas de conversión.</p>
