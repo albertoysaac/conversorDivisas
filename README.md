@@ -8,7 +8,7 @@
 <h3>Conversor de divisas</h3>
 <p>El conversor de divisas nos ofrece la posibilidad de convertir de una divisa a otra entre las cuales estan Peso Mexicano (MXN) dólares estadounidenses (USD), euros (EUR), libras esterlinas (GBP), yenes japoneses (JPY) y wons surcoreanos (KRW) </p>
 
-![Imagen del conversor de divisas](img readme/divisas.png)
+![Imagen del conversor de divisas](/img readme/divisas.png)
 
 
 <h3>Conversor de temperaturas</h3>
