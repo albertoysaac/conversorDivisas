@@ -3,12 +3,14 @@
 <h2>Descripción</h2>
 <p>Conversor_ChallengeONE es una aplicación Java a manera de DashBoard con vistas SWING que permite a los usuarios convertir entre distintas divisas, temperaturas y unidades metricas. Para asegurar una experiencia fluida
   para el usuario, el programa utiliza un JPanel en el que se carga otro JPanel en el que se solicitan la cantidad, la divisa Origen y destino y sin necesidad de un boton muestra el resultado, aplicando para cada uno de
-  los conversores reutilizando el mismo codigo.</p>
+los conversores reutilizando el mismo codigo.</p>
+
+![Imagen del conversor de divisas](img/Bienvenida.png)
 
 <h3>Conversor de divisas</h3>
 <p>El conversor de divisas nos ofrece la posibilidad de convertir de una divisa a otra entre las cuales estan Peso Mexicano (MXN) dólares estadounidenses (USD), euros (EUR), libras esterlinas (GBP), yenes japoneses (JPY) y wons surcoreanos (KRW) </p>
 
-![Imagen del conversor de divisas](/img readme/divisas.png)
+
 
 
 <h3>Conversor de temperaturas</h3>
